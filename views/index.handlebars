@@ -1,0 +1,56 @@
+
+<div class="container">
+	<div class="row">
+		<div class="project">
+			<div class="projectName">Available Projects</div>
+			<div class="projectList">
+				<ul>
+					{{#each this}}
+						<li>
+							<p>Project Title: {{project_title}}</p>
+							<p>Project Description: {{project_description}}</p>
+							<img src="{{image_link}}" alt="Image Pic" style="width:100px;height:100px;">
+							<p>${{funding}}</p>	
+						</li>
+					{{/each}}
+				</ul>
+				<form id="getProjects" action="/projects" method="GET">
+					<input type="submit" class="btn btn-success btn-lg" value="Get Projects">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="amount">
+			<div class="">Get the projects amount</div>
+			<div class="funderList">			
+				<form id="projectAmount" action="/projectAmount" method="GET">
+					<input type="text" class="form-control" placeholder="List project here">
+					<input type="submit" class="btn btn-success btn-lg" value="Get Project Amount">
+				</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="funder">
+			<div class="funderName">List of Funders</div>
+			<div class="funderList">
+				<ul>
+					{{#each this}}
+						<li>
+							<p>Funders: {{username}}</p>
+						</li>
+					{{/each}}
+				</ul>
+				<form id="getFunders" action="/funders" method="GET">
+					<input type="submit" class="btn btn-success btn-lg" value="Get Funders">
+				</form>				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--				<ul>
+					<li class="funders" id="F1">Funder 1</li>
+					<li class="funders" id="F2">Funder 2</li>
+					<li class="funders" id="F3">Funder 3</li>
+				</ul>
